@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Date, Boolean, DateTime
 from datetime import datetime
 from passlib.hash import bcrypt
-from connection import Base, session
+from database.connection import Base, session
 
 class Usuario(Base):
     __tablename__ = 'usuarios'
