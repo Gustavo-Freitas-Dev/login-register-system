@@ -5,12 +5,17 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from database.connection import session
 from database.models import Usuario
 
-nome = 'Guuh Black'
+nome = 'Daff Optical'
 data_nasc = '19/01/2004'
-email = 'Guuh_black02@gmail.com'
-senha = 'Guuh2163k@'
+email = 'datauserdaff@gmail.com'
+senha = 'Daff44217980'
 
-def cadastrar_usuario(nome, data_nasc, email, senha):
+def cadastrar_usuario():
+
+    nome = input('Nome: ')
+    data_nasc = input('Data de nascimento:')
+    email = input('Email: ')
+    senha = input('Senha: ')
 
     consulta = session.query(Usuario).filter(Usuario.email==email).first()
 
@@ -22,4 +27,6 @@ def cadastrar_usuario(nome, data_nasc, email, senha):
         session.add(adicionar_conta)
         session.commit()
 
-cadastrar_usuario(nome, data_nasc, email, senha)
+
+if __name__ == "__main__":
+    cadastrar_usuario()
